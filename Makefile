@@ -5,15 +5,15 @@
 ## Makefile
 ##
 
-SRC_ASM	= 	my_strchr.asm \
-			my_strlen.asm \
-			my_strrchr.asm \
-			my_memset.asm \
-			my_memcpy.asm \
-			my_strcmp.asm \
-			my_memmove.asm \
-			my_strncmp.asm \
-			my_strcasecmp.asm \
+SRC_ASM	= 	strchr.asm \
+			strlen.asm \
+			strrchr.asm \
+			memset.asm \
+			memcpy.asm \
+			strcmp.asm \
+			memmove.asm \
+			strncmp.asm \
+			strcasecmp.asm \
 
 SRC_C	= main.c
 
