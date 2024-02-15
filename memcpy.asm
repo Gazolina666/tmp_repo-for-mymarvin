@@ -4,19 +4,26 @@ global memcpy
 
 memcpy:
     push rbx
+
+    test rdi, rdi
+    jz end
+
+    test rsi, rsi
+    jz end
+
     mov r10, rdi
     mov r11, rsi
     cmp rdx, 0
     je end
 
 loop:
-    mov al, [r11]
-    mov [r10], al
+    cmp rdx, 0
+    je end
+    mov al, byte [r11]
+    mov byte [r10], al
     inc r10
     inc r11
     dec rdx
-    cmp rdx, 0
-    je end
 
     jmp loop
 

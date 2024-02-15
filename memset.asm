@@ -4,16 +4,20 @@ global memset
 
 memset:
     push rbx
+    test rdi, rdi
+    jz end
+
     cmp rdx, 0
     je end
 
 loop:
-    mov byte [rdi], sil
+    cmp rdx, 0
+    je end
+
+    mov [rdi], sil
     inc rdi
 
     dec rdx
-    cmp rdx, 0
-    je end
 
     jmp loop
 
