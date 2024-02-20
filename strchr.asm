@@ -3,11 +3,9 @@ section .text
 global strchr
 
 strchr:
-    test rdi, rdi
-    jz end
-    
+
 loop:
-    cmp byte [rdi], dil
+    cmp byte [rdi], sil
     je found
 
     cmp byte [rdi], 0
