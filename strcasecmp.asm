@@ -16,18 +16,22 @@ loop:
 
     cmp r10b, 'A'
     jl check_r11b_case
+
     cmp r10b, 'Z'
     jg check_r11b_case
+
     add r10b, 32
 
 check_r11b_case:
     cmp r11b, 'A'
-    jl compare_characters
+    jl cmp_char
+
     cmp r11b, 'Z'
-    jg compare_characters
+    jg cmp_char
+    
     add r11b, 32
 
-compare_characters:
+cmp_char:
     cmp r10b, r11b
     jne end
 
