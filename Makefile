@@ -14,6 +14,8 @@ SRC_ASM	= 	strchr.asm \
 			memmove.asm \
 			strncmp.asm \
 			strcasecmp.asm \
+			strstr.asm \
+			strpbrk.asm \
 
 SRC_C	= main.c
 
