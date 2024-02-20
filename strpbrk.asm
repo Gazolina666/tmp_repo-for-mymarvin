@@ -1,8 +1,8 @@
 bits 64
 section .text
-global my_strpbrk
+global strpbrk
 
-my_strpbrk:
+strpbrk:
     mov rcx, 0
     cmp byte [rsi], 0
     je not_found
@@ -18,7 +18,7 @@ loop:
 check_occ
     cmp byte [rsi + r10], 0
     je inc_loop
-    
+
     cmp byte [rsi + r10], r11b
     je found
 

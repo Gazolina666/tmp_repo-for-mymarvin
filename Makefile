@@ -16,6 +16,7 @@ SRC_ASM	= 	strchr.asm \
 			strcasecmp.asm \
 			strstr.asm \
 			strpbrk.asm \
+			strcspn.asm \
 
 SRC_C	= main.c
 
