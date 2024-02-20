@@ -3,15 +3,14 @@ section .text
 global strrchr
 
 strrchr:
-    test rdi, rdi
-    jz end
+    mov r10, 0
 
 loop:
-    cmp byte [rdi], dil
-    je found
-
     cmp byte [rdi], 0
     je end
+
+    cmp byte [rdi], sil
+    je found
 
     inc rdi
     jmp loop
