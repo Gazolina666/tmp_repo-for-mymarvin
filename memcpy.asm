@@ -3,31 +3,20 @@ section .text
 global memcpy
 
 memcpy:
-    push rbx
-
-    test rdi, rdi
-    jz end
-
-    test rsi, rsi
-    jz end
-
-    mov r10, rdi
-    mov r11, rsi
-    cmp rdx, 0
-    je end
+    mov rcx, 0
+    mov rax, rdi
 
 loop:
-    cmp rdx, 0
+    cmp rdx, rcx
     je end
-    mov al, byte [r11]
-    mov byte [r10], al
-    inc r10
-    inc r11
-    dec rdx
+
+    mov r10b, byte [rsi + rcx]
+
+    mov byte [rax + rcx], r10b
+    inc rcx
 
     jmp loop
 
 end:
-    pop rbx
     ret
 

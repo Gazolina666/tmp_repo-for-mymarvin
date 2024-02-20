@@ -3,24 +3,17 @@ section .text
 global memset
 
 memset:
-    push rbx
-    test rdi, rdi
-    jz end
-
-    cmp rdx, 0
-    je end
+    mov rcx, 0
+    mov rax, rdi
 
 loop:
-    cmp rdx, 0
+    cmp rdx, rcx
     je end
 
-    mov [rdi], sil
-    inc rdi
-
-    dec rdx
+    mov byte [rdi + rcx], sil
+    inc rcx
 
     jmp loop
 
 end:
-    pop rbx
     ret
