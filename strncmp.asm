@@ -3,10 +3,11 @@ section .text
 global strncmp
 
 strncmp:
+
+loop:
     cmp rdx, 0
     je end
 
-loop:
 	mov r10b, byte [rdi]
 	mov r11b, byte [rsi]
 
@@ -19,9 +20,6 @@ loop:
 	cmp r10b, r11b
 	jne end
     
-    cmp rdx, 0
-    je end
-
     dec rdx
 	inc rdi
 	inc rsi

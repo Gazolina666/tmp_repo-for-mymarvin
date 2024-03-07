@@ -6,11 +6,11 @@ strrchr:
     mov r10, 0
 
 loop:
-    cmp byte [rdi], 0
-    je end
-
     cmp byte [rdi], sil
     je found
+
+    cmp byte [rdi], 0
+    je end
 
     inc rdi
     jmp loop
